@@ -1,0 +1,35 @@
+﻿@model EmployeeManagement.ViewModel.UpdateEmployeeViewModel;
+
+<div>
+    <form method="post">
+        <div class="mb-3">
+            <label for="Employee-id" class="col-form-label">Employee Id</label>
+            <input type="text" class="form-control" id="recipient-name" readonly placeholder="Employee Id" asp-for="EmployeeId">
+        </div>
+        <div class="mb-3">
+            <label for="Employee-name" class="col-form-label">Employee Name</label>
+            <input type="text" class="form-control" id="recipient-name" readonly placeholder="Employee Name" asp-for="Name">
+        </div>
+        <div class="mb-3">
+            <label for="Email" class="col-form-label">Email</label>
+            <input type="email" class="form-control" id="recipient-name" readonly placeholder="Email" asp-for="Email">
+        </div>
+        <div class="mb-3">
+            <label for="Address" class="col-form-label">Address</label>
+            <input type="text" class="form-control" id="recipient-name" readonly placeholder="Address" asp-for="Address">
+        </div>
+        <div class="mb-3">
+            <label for="ImageUrl" class="col-form-label">ImageUrl</label>
+            <input type="text" class="form-control" id="recipient-name" readonly placeholder="ImageUrl" asp-for="ImageUrl">
+        </div>
+        <div class="mb-3">
+            <label for="Phone-number" class="col-form-label">Phone Number</label>
+            <input type="number" class="form-control" id="recipient-name" readonly placeholder="Phone Number" asp-for="PhoneNumber">
+        </div>
+        <div class="modal-footer">
+
+            <button type="submit" class="btn btn-primary">Update Employee</button>
+            <button type="submit" class="bg-danger border-none  text-white" asp-controller="Employee" asp-action="Delete" px-3 py-1">Delete Employee</button>
+        </div>
+    </form>
+</div>

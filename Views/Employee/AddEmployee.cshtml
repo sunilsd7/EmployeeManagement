@@ -1,0 +1,45 @@
+﻿@model EmployeeManagement.ViewModel.AddEmployeeViewModel;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create New Employee";
+}
+<h2 class="my-4">Add Employee Details</h2>
+
+
+@using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post, new { @class = "needs-validation", enctype = "multipart/form-data", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group mb-3 col-3">
+        @Html.LabelFor(model => model.Name, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Name" })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group mb-3 col-3">
+        @Html.LabelFor(model => model.Email, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Enter the email" })
+    </div>
+
+
+    <div class="form-group mb-3 col-3">
+        @Html.LabelFor(model => model.ImageUrl, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.ImageUrl, new { @class = "form-control", placeholder = "Enter the ImageUrl" })
+    </div>
+
+    <div class="form-group mb-3 col-3">
+        @Html.LabelFor(model => model.Address, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Address" })
+    </div>
+    <div class="form-group mb-3 col-3">
+        @Html.LabelFor(model => model.PhoneNumber, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control", placeholder = "PhoneNumber" })
+    </div>
+    <div class="d-flex align-content-center ">
+
+        <button type="submit" class="btn btn-primary">Add Employee</button>
+        <a href="@Url.Action("EmployeeList", "Employee")" class="btn btn-primary ms-4">Back</a>
+
+    </div>
+}
